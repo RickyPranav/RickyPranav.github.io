@@ -104,3 +104,11 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
 }
+
+body {
+  background-image: url('/assets/images/grayscale.png');
+  background-size: cover;       /* Adjusts the image to fill the screen */
+  background-position: center;  /* Keeps it centred */
+  background-repeat: no-repeat; /* Prevents tiling */
+  background-attachment: fixed; /* Keeps background fixed while scrolling */
+}
