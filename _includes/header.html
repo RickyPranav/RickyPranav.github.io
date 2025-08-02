@@ -1,26 +1,25 @@
-{% if page.title == "Home"
-   or page.title == "Blog"
-   or page.title == "Projects"
-   or page.title == "Tags"
-%}{% assign showHeader = true %}{% endif %}
+{% assign showHeaderPages = "Home,Blog,Projects,Tags" | split: "," %}
+{% if showHeaderPages contains page.title %}
+<header class="header-home {% if site.animation %}animated fadeInDown{% endif %}">
+  <div class="header-content">
+    {% if site.about %}
+      <a class="profile-link" href="{{ site.url }}/about">
+        <img class="profile-pic" src="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" alt="Profile picture of {{ site.title }}">
+      </a>
+    {% else %}
+      <span class="profile-link">
+        <img class="profile-pic" src="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" alt="Profile picture of {{ site.title }}">
+      </span>
+    {% endif %}
 
-{% if showHeader == true %}
-    <header class="header-home {% if site.animation %}animated{% endif %}">
-        {% if site.about %}
-            <a class="link" href="{{ site.url }}/about">
-                <img class="selfie" alt="{{ site.title }}" src="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" />
-            </a>
-        {% else %}
-            <span class="link">
-                <img class="selfie" alt="{{ site.title }}" src="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" />
-            </span>
-        {% endif %}
-
-        <h1 class="title">{{ site.title }}</h1>
-        <h2 class="description">{{ site.bio }}</h2>
-
-        {% include social-links.html %}
-    </header>
+    <div class="text-content">
+      <h1 class="site-title">{{ site.title }}</h1>
+      <p class="site-bio">{{ site.bio }}</p>
+      {% include social-links.html %}
+    </div>
+  </div>
+</header>
 {% endif %}
 
 {% include nav.html %}
+
