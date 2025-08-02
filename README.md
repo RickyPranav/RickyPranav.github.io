@@ -1,5 +1,5 @@
 <p align="center">
-    <h2 align="center">Indigo Minimalist Jekyll Template - <a href="https://sergiokopplin.github.io/indigo/">Demo</a></h2>
+    <h2 align="center">Indigo Minimalist - <a href="https://sergiokopplin.github.io/indigo/">Demo</a></h2>
 </p>
 
 <p align="center">This is a simple and minimalist template for Jekyll for those who likes to eat noodles.</p>
@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-    Light and Dark themes.
+    Light theme.
 </p>
 
 <p align="center">
