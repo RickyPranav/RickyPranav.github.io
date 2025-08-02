@@ -2,44 +2,64 @@
 title: About
 layout: page
 ---
-![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %})
 
-<p>Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div class="about-wrapper">
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <img class="profile-about" src="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" alt="{{ site.title }} profile image" />
 
-<h2>Skills</h2>
+  <p>
+    Hi, I’m **Pranav Duraivel** – an acoustics engineer with a deep passion for sound, vibration, and musical systems. I hold a Bachelor's degree in Mechanical Engineering and a Master's in Acoustical and Vibration Engineering. My academic and research interests include musical acoustics, physical modelling synthesis, signal processing, and numerical methods for dynamic systems.
+  </p>
 
-<ul class="skill-list">
-	<li>HTML - Jade - Haml - Erb</li>
-	<li>Responsive (Mobile First)</li>
-	<li>CSS (Stylus, Sass, Less)</li>
-	<li>Css Frameworks (Bootstrap, Foundation)</li>
-	<li>Javascript (Design Patterns, Tests)</li>
-	<li>AngularJS - ReactJS</li>
-	<li>Grunt - Gulp - Yeoman</li>
-	<li>Git</li>
-	<li>PHP</li>
-	<li>Python</li>
-	<li>MySQL - MongoDB</li>
-	<li>Scrum and Kanban</li>
-	<li>TDD e Continuous Integration</li>
-</ul>
+  <p>
+    I'm currently working on projects involving active vibration control and signal analysis of mechanical and musical systems. When I’m not coding or modelling, you’ll likely find me experimenting with audio hardware or exploring classical piano recordings.
+  </p>
 
-<h2>Projects</h2>
+  <p>
+    My long-term goal is to pursue a PhD in computational acoustics and contribute to the advancement of sound synthesis and physical modelling — especially applied to keyboard instruments like the piano.
+  </p>
 
-<ul>
-	<li><a href="https://github.com/">Lorem Lorem</a></li>
-	<li><a href="https://github.com/">Ipsum Dolor</a></li>
-	<li><a href="https://github.com/">Dolor Lorem</a></li>
-</ul>
+</div>
+
+---
+
+## 🛠️ Technical Skills
+
+### 🧪 Scientific Computing
+- Python (NumPy, SciPy, Matplotlib)
+- MATLAB / Simulink
+- LaTeX
+- OpenCV
+
+### 🎵 Audio & Signal Processing
+- Physical Modelling
+- FFT, Filtering, Spectrograms
+- Microphone Array Calibration
+- Sound Field Reconstruction
+
+### 💻 Web & Programming
+- HTML / Markdown
+- CSS (SASS, SCSS)
+- Git / GitHub
+- Basic React, Jekyll, Bootstrap
+
+### 📦 Tools & Workflows
+- Git & GitHub
+- Agile (Scrum, Kanban)
+- Jupyter, VS Code, Anaconda
+- CI/CD Concepts
+
+---
+
+## 📄 Resume
+
+- [View my CV (PDF)](/resume.pdf)
+
+---
+
+## 💬 Get in Touch
+
+If you'd like to collaborate, ask questions, or chat about acoustics, feel free to [email me](mailto:your@email.com) or connect via the links in the footer!
+
+
+
