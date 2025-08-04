@@ -1,40 +1,58 @@
-<section class="author{% if site.disqus == false %} no-disqus{% endif %}">
-    <div class="toleft">
-        <img
-            class="selfie"
-            src="{% if site.authors[page.author].external-image == true %}{{ site.authors[page.author].picture }}{% else %}{{ site.url }}/{{ site.authors[page.author].picture }}{% endif %}"
-            alt="{{ site.authors[page.author].name }}"
-        />
+<section class="author{% if site.disqus == false %} no-disqus{% endif %}" style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; margin-top: 2rem;">
+
+  <div class="toleft" style="flex-shrink: 0;">
+    <img
+      class="selfie"
+      src="{% if site.authors[page.author].external-image == true %}
+              {{ site.authors[page.author].picture }}
+           {% else %}
+              {{ site.url }}/{{ site.authors[page.author].picture }}
+           {% endif %}"
+      alt="{{ site.authors[page.author].name | default: 'Author' }}"
+      style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="toright" style="flex: 1;">
+    <h4 class="name" style="margin: 0 0 0.25rem 0;">{{ site.authors[page.author].name | default: "Unknown Author" }}</h4>
+    <p class="bio" style="margin-bottom: 0.75rem;">{{ site.authors[page.author].bio | default: "Author bio goes here." }}</p>
+
+    <div class="share" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      <a
+        class="twitter"
+        href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }} - {{ page.title }} by @{{ site.authors[page.author].twitter }}"
+        target="_blank"
+        rel="noopener"
+        aria-label="Share on Twitter"
+      >
+        <i class="fa-brands fa-twitter"></i>
+        <span class="icon-twitter">Tweet</span>
+      </a>
+
+      <a
+        class="facebook"
+        href="#"
+        onclick="window.open('https://facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href), 'facebook-share-dialog', 'width=626,height=436'); return false;"
+        aria-label="Share on Facebook"
+      >
+        <i class="fa-brands fa-facebook"></i>
+        <span class="icon-facebook-rect">Share</span>
+      </a>
+
+      {% if site.authors[page.author].linkedin %}
+      <a
+        class="linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{ page.title }}&summary={{ page.description }}&source={{ site.url }}"
+        target="_blank"
+        rel="noopener"
+        aria-label="Share on LinkedIn"
+      >
+        <i class="fa-brands fa-linkedin"></i>
+        <span class="icon-linkedin">Share</span>
+      </a>
+      {% endif %}
     </div>
+  </div>
 
-    <div class="toright">
-        <h4 class="name">{{ site.authors[page.author].name }}</h4>
-        <p class="bio">{{ site.authors[page.author].bio }}</p>
-
-        <div class="share">
-            <!-- Note: Only use three share links if your site width is set to large -->
-            <!-- If site width is set to normal, you may choose any two share links -->
-            <a
-                class="twitter"
-                href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }} - {{ page.title }} by @{{ site.authors[page.author].twitter }}"
-            >
-                <i class="fa-brands fa-twitter"></i>
-                <span class="icon-twitter">Tweet</span>
-            </a>
-
-            <a
-                class="facebook"
-                href="javascript:void(0)"
-                onclick="window.open('https://facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 'facebook-share-dialog', 'width=626,height=436'); return false;"
-            >
-                <i class="fa-brands fa-facebook"></i>
-                <span class="icon-facebook-rect">Share</span>
-            </a>
-
-            <!-- <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.url }}{{ page.url }}&amp;title={{ page.title }}&amp;summary={{ page.description }}&amp;source={{ site.url }}" target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
-                <span class="icon-linkedin">Share</span>
-            </a> -->
-        </div>
-    </div>
 </section>
