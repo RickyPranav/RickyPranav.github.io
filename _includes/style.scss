@@ -112,3 +112,19 @@ body {
   background-repeat: no-repeat; /* Prevents tiling */
   background-attachment: fixed; /* Keeps background fixed while scrolling */
 }
+
+/* Add this to your main CSS (style.css) */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
