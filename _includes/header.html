@@ -1,20 +1,33 @@
 {% assign showHeaderPages = "Home,Blog,Projects,Tags" | split: "," %}
+
 {% if showHeaderPages contains page.title %}
-<header class="header-home {% if site.animation %}animated fadeInDown{% endif %}">
-  <div class="header-content">
+<header class="header-home {% if site.animation %}animated fadeInDown{% endif %}" style="padding: 1.5rem 1rem; display: flex; align-items: center; gap: 1rem;">
+
+  <div class="header-content" style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+
+    {% assign profile_img = site.external-image | default: false %}
+    {% assign profile_src = profile_img == true
+      | if: site.authors and site.authors[page.author]
+      | then: site.authors[page.author].picture
+      | else: site.picture %}
+    {% assign profile_src = profile_img == false and profile_src contains "http"
+      | unless: site.url | append: "/" | append: profile_src %}
+
     {% if site.about %}
-      <a class="profile-link" href="{{ site.url }}/about">
-        <img class="profile-pic" src="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" alt="Profile picture of {{ site.title }}">
+      <a class="profile-link" href="{{ site.url }}/about" aria-label="About {{ site.title }}">
+        <img class="profile-pic" src="{{ profile_src }}" alt="Profile picture of {{ site.title }}"
+             style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;" />
       </a>
     {% else %}
       <span class="profile-link">
-        <img class="profile-pic" src="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" alt="Profile picture of {{ site.title }}">
+        <img class="profile-pic" src="{{ profile_src }}" alt="Profile picture of {{ site.title }}"
+             style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;" />
       </span>
     {% endif %}
 
     <div class="text-content">
-      <h1 class="site-title">{{ site.title }}</h1>
-      <p class="site-bio">{{ site.bio }}</p>
+      <h1 class="site-title" style="margin: 0;">{{ site.title }}</h1>
+      <p class="site-bio" style="margin-top: 0.25rem;">{{ site.bio }}</p>
       {% include social-links.html %}
     </div>
   </div>
@@ -22,4 +35,3 @@
 {% endif %}
 
 {% include nav.html %}
-
