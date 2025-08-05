@@ -113,18 +113,19 @@ body {
   background-attachment: fixed; /* Keeps background fixed while scrolling */
 }
 
-/* Add this to your main CSS (style.css) */
+/* Make the body take the full height */
 html, body {
   height: 100%;
   margin: 0;
-  padding: 0;
-}
-
-body {
   display: flex;
   flex-direction: column;
 }
 
-main {
-  flex: 1;
-}
+/* Push the footer to the bottom */
+.footer-main {
+  margin-top: auto;
+  padding: 1rem;
+  text-align: center;
+  color: #555;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
